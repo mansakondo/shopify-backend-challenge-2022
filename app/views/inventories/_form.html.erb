@@ -1,0 +1,22 @@
+<%= form_with model: @inventory do |inventory_form| %>
+  <%= inventory_form.text_field :name, placeholder: "Name", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+
+  <div class="px-3 mt-6">
+    <%= field_set_tag nil, class: "flex flex-col" do %>
+      <legend class="mb-2 text-gray-500">Base location</legend>
+      <%= inventory_form.fields_for :locations, @inventory.locations.first do |location_fields| %>
+        <div class="flex flex-col gap-6">
+          <%= location_fields.text_field :name, placeholder: "Name", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          <%= location_fields.text_field :address, placeholder: "Address", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          <%= location_fields.text_field :city, placeholder: "City", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          <%= location_fields.text_field :country, placeholder: "Country", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="flex items-center px-4 mt-8 text-white bg-black rounded cursor-pointer w-fit h-14">
+    <%= inventory_form.submit nil, class: "cursor-pointer" %>
+  </div>
+<% end %>
+

@@ -1,0 +1,14 @@
+<tr class="border-b">
+  <th scope="row" class="px-6 py-4">
+    <%= link_to inventory.name, inventory_stocks_path(inventory), class: "link" %>
+  </th>
+  <td class="px-6 py-4">
+    <%= link_to "Edit", edit_inventory_path(inventory), class: "link" %>
+  </td>
+  <td class="px-6 py-4">
+    <%= button_to "Delete", inventory, method: :delete, form: { data: { "turbo-method": :delete, "turbo-confirm": "Are you sure?" }}, class: "link" %>
+  </td>
+  <td>
+    <%= link_to "Manage locations", inventory_locations_path(inventory), class: "link" %>
+  </td>
+</tr>
