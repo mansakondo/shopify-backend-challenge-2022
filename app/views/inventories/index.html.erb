@@ -1,2 +1,16 @@
-<h1>Inventories#index</h1>
-<p>Find me in app/views/inventories/index.html.erb</p>
+<h1 class="text-xl font-bold prose">Inventories</h1>
+
+<div class="relative mt-4 overflow-x-auto shadow rounded-md">
+  <table class="w-full pb-4 text-sm text-left text-gray-500 table-auto">
+    <tbody>
+      <%= render @inventories %>
+    </tbody>
+  </table>
+</div>
+<div class="flex justify-end mt-2">
+  <%= button_to new_inventory_path, method: :get do %>
+    <div class="flex items-center justify-center text-white bg-black rounded-full w-14 h-14 flex-center align-center hover:black-100">
+      <span class="material-icons">add</span>
+    </div>
+  <% end %>
+</div>
