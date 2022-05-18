@@ -27,11 +27,15 @@
               <%= location.name %>
             </button>
           <% end %>
+          <div class="px-6 py-3 border-t">
+            <%= link_to "Manage locations", inventory_locations_path(@inventory), class: "hover:underline" %>
+          </div>
         </div>
       </div>
     </form>
   </div>
 </div>
+
 
 <div class="relative mt-4 overflow-x-auto shadow rounded-md">
   <table class="w-full pb-4 text-sm text-left table-auto text-zinc-500">
