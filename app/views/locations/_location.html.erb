@@ -1,0 +1,21 @@
+<tr class="border-b">
+  <th scope="row" class="px-6 py-4">
+    <%= link_to location.name, inventory_location_path(@inventory, location), class: "link" %>
+  </th>
+  <td class="px-6 py-4">
+    <%= location.address %>
+  </td>
+  <td class="px-6 py-4">
+    <%= location.city %>
+  </td>
+  <td class="px-6 py-4">
+    <%= location.country %>
+  </td>
+  <td class="px-6 py-4">
+    <%= link_to "Edit", edit_inventory_location_path(@inventory, location), class: "link" %>
+  </td>
+  <td class="px-6 py-4">
+    <%= button_to "Delete", [@inventory, location], method: :delete, class: "link" %>
+  </td>
+</tr>
+

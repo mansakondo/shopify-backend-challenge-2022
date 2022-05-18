@@ -1,2 +1,45 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<h1 class="h1">
+  <%= @location.name %>
+</h1>
+
+<div>
+  <div>
+    <div class="relative overflow-x-auto shadow rounded-md">
+      <table class="w-full pb-4 text-sm text-left text-gray-500 table-auto">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3">Name</th>
+            <th scope="col" class="px-6 py-3">Address</th>
+            <th scope="col" class="px-6 py-3">City</th>
+            <th scope="col" class="px-6 py-3">Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-6 py-4">
+              <%= @location.name %>
+            </td>
+            <td class="px-6 py-4">
+              <%= @location.address %>
+            </td>
+            <td class="px-6 py-4">
+              <%= @location.city %>
+            </td>
+            <td class="px-6 py-4">
+              <%= @location.country %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="flex items-center mt-4 gap-6">
+    <%= button_to edit_inventory_location_path(@inventory, @location), method: :get, class: "px-4 py-2 bg-black text-white rounded" do %>
+      <span>Edit</span>
+    <% end %>
+    <%= button_to [@inventory, @location], method: :delete, class: "px-4 py-2" do %>
+      <span>Delete</span>
+    <% end %>
+  </div>
+</div>
