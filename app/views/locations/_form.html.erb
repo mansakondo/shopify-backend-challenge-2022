@@ -1,9 +1,21 @@
 <%= form_with model: [@inventory, @location] do |location_form| %>
   <div class="flex flex-col gap-6">
-    <%= location_form.text_field :name, placeholder: "Name", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-    <%= location_form.text_field :address, placeholder: "Address", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-    <%= location_form.text_field :city, placeholder: "City", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-    <%= location_form.text_field :country, placeholder: "Country", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+    <div class="flex flex-col">
+      <%= location_form.label :name, class: "px-3 text-zinc-500 text-sm" %>
+      <%= location_form.text_field :name, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+    </div>
+    <div class="flex flex-col">
+      <%= location_form.label :address, class: "px-3 text-zinc-500 text-sm" %>
+      <%= location_form.text_field :address, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+    </div>
+    <div class="flex flex-col">
+      <%= location_form.label :city, class: "px-3 text-zinc-500 text-sm" %>
+      <%= location_form.text_field :city, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+    </div>
+    <div class="flex flex-col">
+      <%= location_form.label :country, class: "px-3 text-zinc-500 text-sm" %>
+      <%= location_form.text_field :country, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+    </div>
   </div>
 
   <%= location_form.submit nil, class: "btn mt-8" %>

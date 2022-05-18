@@ -1,15 +1,30 @@
 <%= form_with model: @inventory do |inventory_form| %>
-  <%= inventory_form.text_field :name, placeholder: "Name", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+  <div class="flex flex-col">
+    <%= inventory_form.label :name, class: "px-3 text-zinc-500 text-sm" %>
+    <%= inventory_form.text_field :name, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+  </div>
 
   <div class="px-3 mt-6">
     <%= field_set_tag nil, class: "flex flex-col" do %>
-      <legend class="mb-2 text-gray-500">Base location</legend>
+      <legend class="mb-2 text-zinc-500">Base location</legend>
       <%= inventory_form.fields_for :locations, @inventory.locations.first do |location_fields| %>
         <div class="flex flex-col gap-6">
-          <%= location_fields.text_field :name, placeholder: "Name", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-          <%= location_fields.text_field :address, placeholder: "Address", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-          <%= location_fields.text_field :city, placeholder: "City", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-          <%= location_fields.text_field :country, placeholder: "Country", class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          <div class="flex flex-col">
+            <%= location_fields.label :name, class: "px-3 text-zinc-500 text-sm" %>
+            <%= location_fields.text_field :name, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          </div>
+          <div class="flex flex-col">
+            <%= location_fields.label :address, class: "px-3 text-zinc-500 text-sm" %>
+            <%= location_fields.text_field :address, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          </div>
+          <div class="flex flex-col">
+            <%= location_fields.label :city, class: "px-3 text-zinc-500 text-sm" %>
+            <%= location_fields.text_field :city, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          </div>
+          <div class="flex flex-col">
+            <%= location_fields.label :country, class: "px-3 text-zinc-500 text-sm" %>
+            <%= location_fields.text_field :country, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+          </div>
         </div>
       <% end %>
     <% end %>
