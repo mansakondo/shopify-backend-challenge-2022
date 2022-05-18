@@ -1,2 +1,39 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1 class="h1">
+  <%= @item.name %>
+</h1>
+
+<div>
+  <div>
+    <div class="relative w-1/2 overflow-x-auto shadow rounded-md">
+      <table class="w-full pb-4 text-sm text-left text-gray-500 table-auto">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3">Quantity</th>
+            <th scope="col" class="px-6 py-3">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @item.stocks.each do |stock| %>
+            <tr>
+              <td class="px-6 py-4">
+                <%= stock.quantity %>
+              </td>
+              <td class="px-6 py-4">
+                <%= stock.location.name %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="flex items-center mt-4 gap-6">
+    <%= button_to edit_inventory_item_path(@inventory, @item), method: :get, class: "px-4 py-2 bg-black text-white rounded" do %>
+      <span>Edit</span>
+    <% end %>
+    <%= button_to [@inventory, @item], method: :delete, class: "px-4 py-2" do %>
+      <span>Delete</span>
+    <% end %>
+  </div>
+</div>

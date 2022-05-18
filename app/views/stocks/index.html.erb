@@ -1,2 +1,58 @@
-<h1>Stocks#index</h1>
-<p>Find me in app/views/stocks/index.html.erb</p>
+<h1 class="h1">
+  <%= @inventory.name %>
+</h1>
+
+<div class="flex justify-end">
+  <div class="relative z-20">
+    <form>
+      <input type="checkbox" id="toggle-locations" class="absolute w-0 h-0 opacity-0">
+
+      <div class="flex items-center px-6 py-3 border rounded gap-6 md:w-auto">
+        <div class="flex gap-3">
+          <span class="material-icons">place</span>
+          <span>
+            <%= @default_location ? @default_location.name : "Select a location" %>
+          </span>
+        </div>
+
+        <label for="toggle-locations" class="flex">
+          <span class="material-icons"></span>
+        </label>
+      </div>
+
+      <div class="absolute w-full mt-3 bg-white shadow">
+        <div id="location-select" class="flex flex-col mt-2 transition-opacity transition-duration-300" role="listbox" aria-label="Select a location">
+          <% @inventory.locations.each do |location| %>
+            <button type="submit" name="location_id" value="<%= location.id %>" role="option">
+              <%= location.name %>
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="relative mt-4 overflow-x-auto shadow rounded-md">
+  <table class="w-full pb-4 text-sm text-left text-gray-500 table-auto">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3">Item</th>
+        <th scope="col" class="px-6 py-3">Quantity</th>
+        <th class="sr-only">Blank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @stocks %>
+    </tbody>
+  </table>
+</div>
+<div class="flex justify-end mt-2">
+  <%= button_to new_inventory_item_path, method: :get do %>
+    <div class="flex items-center justify-center text-white bg-black rounded-full px-4 py-4 flex-center align-center hover:black-100">
+      <span class="material-icons">add</span>
+    </div>
+  <% end %>
+</div>
+
+
