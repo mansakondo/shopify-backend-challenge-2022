@@ -6,6 +6,9 @@
   .h1 {
     @apply mb-4 text-xl font-bold prose
   }
+  .btn {
+    @apply px-4 py-2 bg-black text-white rounded
+  }
 }
 
 .link {
