@@ -7,3 +7,39 @@
 		text-decoration: underline;
 	}
 }
+
+#location-select {
+  button[type=submit] {
+    width: inherit;
+    text-align: inherit;
+    display: block;
+    cursor: pointer;
+    @apply px-6 py-2;
+
+    &:hover {
+      background: #f4f4f5;
+    }
+  }
+}
+
+#toggle-locations {
+  + div > label > span:before {
+    content: "expand_more";
+  }
+
+  + div + div {
+    opacity: 0;
+    visibility: collapse;
+  }
+
+  &:checked {
+    + div > label > span:before {
+      content: "expand_less";
+    }
+
+    + div + div {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
