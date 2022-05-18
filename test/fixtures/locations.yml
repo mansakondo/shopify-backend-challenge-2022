@@ -1,15 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  city: MyString
-  country: MyString
-  inventory: one
-
-two:
-  name: MyString
-  address: MyString
-  city: MyString
-  country: MyString
-  inventory: two
+<% 6.times do |i| %>
+ warehouse<%= i %>:
+   id: <%= i %>
+   name: Warehouse <%= i+1 %>
+   address: <%= Faker::Address.street_address %>
+   city: <%= Faker::Address.city %>
+   country: <%= Faker::Address.country %>
+   inventory: sample_inventory
+<% end %>
