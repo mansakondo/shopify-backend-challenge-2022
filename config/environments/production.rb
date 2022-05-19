@@ -40,7 +40,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
-  config.action_cable.allowed_request_origins = [ "https://shopify-challenge-fall-2022.com", "http://shopify-challenge-fall-2022.com" ]
+  config.action_cable.allowed_request_origins = [ /.*\.herokuapp\.com/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -84,4 +84,7 @@ Rails.application.configure do
 
   # Allow hosting on *.repl.co hosts
   config.hosts << /.*\.repl.co/
+
+  # Allow hosting on Heroku
+  config.hosts << /.*\.herokuapp\.com/
 end
