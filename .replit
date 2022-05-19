@@ -1,0 +1,8 @@
+run = "sh start.sh"
+
+[env]
+RAILS_ENV="production"
+RAILS_SERVE_STATIC_FILES="enabled"
+
+[nix]
+channel = "stable-21_11"
