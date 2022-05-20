@@ -4,7 +4,7 @@ A simple inventory tracking application for the [Fall 2022 - Shopify Developer I
 
 This application was hosted on [Replit](https://shopify-backend-challenge-2022.mansakondo.repl.co) and [Heroku](https://shopify-challenge-fall-2022.herokuapp.com/).
 
-## Inventories
+## Main features
 
 ### Creating inventories
 
@@ -17,8 +17,6 @@ This application was hosted on [Replit](https://shopify-backend-challenge-2022.m
 1. Go to the inventories index page.
 2. Click on **Edit**.
 3. Select a base location.
-
-## Items
 
 ### Adding items
 
@@ -33,8 +31,6 @@ This application was hosted on [Replit](https://shopify-backend-challenge-2022.m
 2. Select an inventory by clicking on it's name.
 2. Change the location to see HOW MUCH (quantity) of WHAT (item) is stored WHERE (location).
 
-## Locations
-
 ### Adding locations
 
 1. Go to the inventories index page.
@@ -42,3 +38,17 @@ This application was hosted on [Replit](https://shopify-backend-challenge-2022.m
 3. Click on the add button.
 4. Choose a name, address, city and country.
 
+## Feature tests
+
+WARNING: If you want to run these tests, you cannot run them on Replit since Rails needs root
+privileges for that. So you need to run them on your local machine instead.
+
+Run the system tests with:
+```bash
+$ bin/rails test:system
+```
+
+Use the `HEADLESS_BROWSER_MODE` environment variable to see the tests run in the browser:
+```bash
+$ HEADLESS_BROWSER_MODE=disabled bin/rails test:system
+```
