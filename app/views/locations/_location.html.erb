@@ -1,4 +1,4 @@
-<tr class="border-b">
+<tr id=" <%= dom_id(location) %>" class="border-b">
   <th scope="row" class="px-6 py-4">
     <%= link_to location.name, inventory_location_path(@inventory, location), class: "link" %>
   </th>

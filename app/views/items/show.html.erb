@@ -8,17 +8,17 @@
       <table class="w-full pb-4 text-sm text-left text-gray-500 table-auto">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
-            <th scope="col" class="px-6 py-3">Quantity</th>
-            <th scope="col" class="px-6 py-3">Location</th>
+            <th scope="col" id="quantity" class="px-6 py-3">Quantity</th>
+            <th scope="col" id="location" class="px-6 py-3">Location</th>
           </tr>
         </thead>
         <tbody>
           <% @item.stocks.each do |stock| %>
-            <tr>
-              <td class="px-6 py-4">
+            <tr id="<%= dom_id(stock) %>">
+              <td headers="quantity" class="px-6 py-4">
                 <%= stock.quantity %>
               </td>
-              <td class="px-6 py-4">
+              <td headers="location" class="px-6 py-4">
                 <%= stock.location.name %>
               </td>
             </tr>
