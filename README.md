@@ -1,25 +1,44 @@
 # Shopify Backend Challenge 2022
 
-[Live demo](https://shopify-backend-challenge-2022.mansakondo.repl.co)
+A simple inventory tracking application for the [Fall 2022 - Shopify Developer Intern Challenge](https://docs.google.com/document/d/1PoxpoaJymXmFB3iCMhGL6js-ibht7GO_DkCF2elCySU/edit).
 
-## Creating inventories
+This application was hosted on [Replit](https://shopify-backend-challenge-2022.mansakondo.repl.co) and [Heroku](https://shopify-challenge-fall-2022.herokuapp.com/).
 
-* Click on the add button below the inventories list.
-* Choose a name, and a base location.
+## Inventories
 
-## Adding items
+### Creating inventories
 
-* Select an inventory by clicking on it's name in the inventories list.
-* Click on the add button.
-* Choose a name, and enter the quantity stored at each location.
+1. Go to the inventories index page.
+2. Click on the add button.
+3. Choose a name, and a base location.
 
-## Adding locations
+### Changing the base location
 
-* Click on **Manage locations** in the inventories list (or in the inventory's stocks list below
-		the location options).
-* Click on the add button.
-* Choose a name, address, city and country.
+1. Go to the inventories index page.
+2. Click on **Edit**.
+3. Select a base location.
 
-## Keeping track of stocks at different locations
+## Items
 
-* In the inventory's stock list, switch the location to see HOW MUCH (quantity) of WHAT (item) is stored WHERE (location).
+### Adding items
+
+1. Go to the inventories index page.
+2. Select an inventory by clicking on it's name.
+3. Click on the add button.
+4. Choose a name, and enter the quantity for at each location.
+
+### Keeping track of stocks at different locations
+
+1. Go the inventories index page.
+2. Select an inventory by clicking on it's name.
+2. Change the location to see HOW MUCH (quantity) of WHAT (item) is stored WHERE (location).
+
+## Locations
+
+### Adding locations
+
+1. Go to the inventories index page.
+2. Click on **Manage locations**.
+3. Click on the add button.
+4. Choose a name, address, city and country.
+
