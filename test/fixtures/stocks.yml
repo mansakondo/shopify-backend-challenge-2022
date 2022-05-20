@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-<% 6.times do |item_id| %>
-  <% 6.times do |i| %>
-    stock<%= i %>:
-      id: <%= i %>
-      quantity: rand(10)
-      location_id: <%= i %>
+<% 1.upto(6) do |item_id| %>
+  <% 1.upto(6) do |n| %>
+    stock<%= n %>:
+      id: <%= n %>
+      quantity: <%= rand 10 %>
+      location_id: <%= n %>
       item_id: <%= item_id %>
   <% end %>
 <% end %>

@@ -1,11 +1,12 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-<% 6.times do |i| %>
- warehouse<%= i %>:
-   id: <%= i %>
-   name: Warehouse <%= i+1 %>
+<% 1.upto(6) do |n| %>
+ warehouse<%= n %>:
+   id: <%= n %>
+   name: Warehouse <%= n %>
    address: <%= Faker::Address.street_address %>
    city: <%= Faker::Address.city %>
    country: <%= Faker::Address.country %>
-   inventory: sample_inventory
+   inventory_id: 1
+   base: <%= n == 1 ? true : false %>
 <% end %>
