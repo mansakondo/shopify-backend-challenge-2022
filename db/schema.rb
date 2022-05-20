@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_17_132127) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_19_210639) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +36,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_132127) do
     t.bigint "inventory_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "base", default: false, null: false
+    t.index ["inventory_id", "base"], name: "index_locations_on_inventory_id_and_base", unique: true, where: "(base = true)"
     t.index ["inventory_id"], name: "index_locations_on_inventory_id"
   end
 

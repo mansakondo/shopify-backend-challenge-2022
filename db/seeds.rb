@@ -1,9 +1,17 @@
-inventory = Inventory.create(name: "Sample inventory")
+base_location = Location.new(
+  name: "Warehouse 1",
+  address: Faker::Address.street_address,
+  city: Faker::Address.city,
+  country: Faker::Address.country,
+  base: true
+)
 
-6.times do |i|
+inventory = Inventory.create(name: "Sample inventory", base_location: base_location)
+
+2.upto(6) do |n|
   location = Location.new
 
-  location.name    = "Warehouse #{i+1}"
+  location.name    = "Warehouse #{n}"
   location.address = Faker::Address.street_address
   location.city    = Faker::Address.city
   location.country = Faker::Address.country
