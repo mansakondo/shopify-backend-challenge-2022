@@ -1,14 +1,14 @@
 <tr id=" <%= dom_id(location) %>" class="border-b">
-  <th scope="row" class="px-6 py-4">
+  <th scope="row" class="px-6 py-4 truncate max-w-[150px]">
     <%= link_to location.name, inventory_location_path(@inventory, location), class: "link" %>
   </th>
-  <td class="px-6 py-4">
+  <td class="px-6 py-4 truncate max-w-[200px]">
     <%= location.address %>
   </td>
-  <td class="px-6 py-4">
+  <td class="px-6 py-4 truncate max-w-[160px]">
     <%= location.city %>
   </td>
-  <td class="px-6 py-4">
+  <td class="px-6 py-4 truncate max-w-[200px]">
     <%= location.country %>
   </td>
   <td class="px-6 py-4">

@@ -1,9 +1,8 @@
 <tr id="<%= dom_id(stock) %>"class="border-b">
-  <th scope="row" headers="name"class="px-6 py-4">
+  <th scope="row" headers="name"class="px-6 py-4 truncate max-w-[200px]">
     <%= link_to stock.item.name, inventory_item_path(stock.item.inventory, stock.item), class: "link" %>
   </th>
-  <td headers="quantity" class="px-6 py-4">
+  <td headers="quantity" class="px-6 py-4 text-right truncate max-w-[20px]">
     <%= stock.quantity %>
   </td>
-  <td></td>
 </tr>

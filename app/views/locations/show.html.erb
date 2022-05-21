@@ -2,39 +2,37 @@
   <%= @location.name %>
 </h1>
 
-<div>
-  <div>
-    <div class="relative overflow-x-auto shadow rounded-md">
-      <table class="w-full pb-4 text-sm text-left text-gray-500 table-auto">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-          <tr>
-            <th scope="col" class="px-6 py-3">Name</th>
-            <th scope="col" class="px-6 py-3">Address</th>
-            <th scope="col" class="px-6 py-3">City</th>
-            <th scope="col" class="px-6 py-3">Country</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="px-6 py-4">
-              <%= @location.name %>
-            </td>
-            <td class="px-6 py-4">
-              <%= @location.address %>
-            </td>
-            <td class="px-6 py-4">
-              <%= @location.city %>
-            </td>
-            <td class="px-6 py-4">
-              <%= @location.country %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="flex flex-col mx-auto my-0 w-fit">
+  <div class="relative flex justify-center overflow-x-auto shadow rounded-md">
+    <table class="pb-4 text-sm text-left text-gray-500 table-auto">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-3 w-[200px]">Name</th>
+          <th scope="col" class="px-6 py-3 w-[200px]">Address</th>
+          <th scope="col" class="px-6 py-3 w-[200px]">City</th>
+          <th scope="col" class="px-6 py-3 w-[200px]">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-6 py-4 truncate max-w-[200px]">
+            <%= @location.name %>
+          </td>
+          <td class="px-6 py-4 truncate max-w-[200px]">
+            <%= @location.address %>
+          </td>
+          <td class="px-6 py-4 truncate max-w-[200px]">
+            <%= @location.city %>
+          </td>
+          <td class="px-6 py-4 truncate max-w-[200px]">
+            <%= @location.country %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="flex items-center mt-4 gap-6">
+  <div class="flex items-center mt-4 sm:self-end gap-6">
     <%= button_to "Edit", edit_inventory_location_path(@inventory, @location), method: :get, class: "btn" %>
     <%= button_to "Delete", [@inventory, @location], method: :delete, class: "px-4 py-2" %>
   </div>

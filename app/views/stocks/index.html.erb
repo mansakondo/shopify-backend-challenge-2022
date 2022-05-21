@@ -2,53 +2,54 @@
   <%= @inventory.name %>
 </h1>
 
-<div class="flex justify-end">
-  <div class="relative z-20">
-    <form>
-      <input type="checkbox" id="toggle-locations" class="absolute w-0 h-0 opacity-0">
+  <div class="flex flex-col mx-auto my-0 w-fit">
+    <div class="relative z-20 flex self-end">
+      <form>
+        <input type="checkbox" id="toggle-locations" class="absolute w-0 h-0 opacity-0">
 
-      <div class="flex items-center px-6 py-3 border rounded gap-6 md:w-auto">
-        <div class="flex gap-3">
-          <span class="material-icons">place</span>
-          <span>
-            <%= @location ? @location.name : @base_location.name %>
-          </span>
+        <div class="flex items-center px-6 py-3 border rounded gap-6 md:w-auto">
+          <div class="flex gap-3">
+            <span class="material-icons">place</span>
+            <span>
+              <%= @location ? @location.name : @base_location.name %>
+            </span>
+          </div>
+
+          <label for="toggle-locations" class="flex">
+            <span class="material-icons"></span>
+          </label>
         </div>
 
-        <label for="toggle-locations" class="flex">
-          <span class="material-icons"></span>
-        </label>
-      </div>
-
-      <div class="absolute w-full mt-3 bg-white shadow">
-        <div id="location-select" class="flex flex-col mt-2 transition-opacity transition-duration-300" role="listbox" aria-label="Select a location">
-          <% @inventory.locations.each do |location| %>
-            <button type="submit" name="location_id" value="<%= location.id %>" role="option">
-              <%= location.name %>
-            </button>
-          <% end %>
-          <div class="px-6 py-3 border-t">
-            <%= link_to "Manage locations", inventory_locations_path(@inventory), class: "hover:underline" %>
+        <div class="absolute w-full mt-3 bg-white shadow">
+          <div id="location-select" class="flex flex-col mt-2 transition-opacity transition-duration-300" role="listbox" aria-label="Select a location">
+            <% @inventory.locations.each do |location| %>
+              <button type="submit" name="location_id" value="<%= location.id %>" role="option">
+                <%= location.name %>
+              </button>
+            <% end %>
+            <div class="px-6 py-3 border-t">
+              <%= link_to "Manage locations", inventory_locations_path(@inventory), class: "hover:underline" %>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-  </div>
-</div>
+      </form>
+    </div>
 
-<div class="relative mt-4 overflow-x-auto shadow rounded-md">
-  <table class="w-full pb-4 text-sm text-left table-auto text-zinc-500">
-    <thead class="text-xs uppercase text-zinc-700 bg-gray-50">
-      <tr>
-        <th scope="col" id="item" class="px-6 py-3">Item</th>
-        <th scope="col" id="quantity" class="px-6 py-3">Quantity</th>
-        <th class="sr-only">Blank</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @stocks %>
-    </tbody>
-  </table>
-</div>
+    <div class="relative mt-4 overflow-x-auto shadow rounded-md">
+      <table class="pb-4 text-sm text-left table-auto text-zinc-500">
+        <thead class="text-xs uppercase text-zinc-700 bg-gray-50">
+          <tr>
+            <th scope="col" id="item" class="px-6 py-3 w-[300px]">Item</th>
+            <th scope="col" id="quantity" class="w-5 px-6 py-3">Quantity</th>
+            <th class="sr-only">Blank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @stocks %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 
 <%= render "shared/fab", url: new_inventory_item_path, model_name: "item" %>

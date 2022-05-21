@@ -2,33 +2,31 @@
   <%= @item.name %>
 </h1>
 
-<div>
-  <div>
-    <div class="relative w-1/2 overflow-x-auto shadow rounded-md">
-      <table class="w-full pb-4 text-sm text-left text-gray-500 table-auto">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-          <tr>
-            <th scope="col" id="quantity" class="px-6 py-3">Quantity</th>
-            <th scope="col" id="location" class="px-6 py-3">Location</th>
+<div class="flex flex-col mx-auto my-0 w-fit">
+  <div class="relative overflow-x-auto shadow rounded-md">
+    <table class="pb-4 mx-auto my-0 text-sm text-left text-gray-500 table-auto">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th scope="col" id="location" class="px-6 py-3 w-[200px]">Location</th>
+          <th scope="col" id="quantity" class="w-5 px-6 py-3">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @item.stocks.each do |stock| %>
+          <tr id="<%= dom_id(stock) %>">
+            <td headers="location" class="px-6 py-4 truncate max-w-[240px]">
+              <%= link_to stock.location.name, inventory_location_path(@inventory, stock.location), class: "link" %>
+            </td>
+            <td headers="quantity" class="px-6 py-4 text-right truncate max-w-[20px]">
+              <%= stock.quantity %>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <% @item.stocks.each do |stock| %>
-            <tr id="<%= dom_id(stock) %>">
-              <td headers="quantity" class="px-6 py-4">
-                <%= stock.quantity %>
-              </td>
-              <td headers="location" class="px-6 py-4">
-                <%= stock.location.name %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 
-  <div class="flex items-center mt-4 gap-6">
+  <div class="flex items-center self-end mt-4 gap-6">
     <%= button_to "Edit", edit_inventory_item_path(@inventory, @item), method: :get, class: "btn" %>
     <%= button_to "Delete", [@inventory, @item], method: :delete, class: "px-4 py-2" %>
   </div>

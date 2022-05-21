@@ -1,14 +1,14 @@
-<tr id="<%= dom_id(inventory) %>" class="border-b">
-  <th scope="row" class="px-6 py-4">
+<tr id="<%= dom_id(inventory) %>" class="truncate border-b">
+  <th scope="row" class="px-6 py-4 truncate w-[220px] max-w-[220px]">
     <%= link_to inventory.name, inventory_stocks_path(inventory), class: "link" %>
   </th>
-  <td class="px-6 py-4">
+  <td class="w-4 px-6 py-4">
     <%= link_to "Edit", edit_inventory_path(inventory), class: "link" %>
   </td>
   <td class="px-6 py-4">
     <%= button_to "Delete", inventory, method: :delete, form: { data: { "turbo-method": :delete, "turbo-confirm": "Are you sure?" }}, class: "link" %>
   </td>
-  <td>
+  <td class="px-6 py-4">
     <%= link_to "Manage locations", inventory_locations_path(inventory), class: "link" %>
   </td>
 </tr>

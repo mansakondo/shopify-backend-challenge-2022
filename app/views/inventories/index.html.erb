@@ -1,11 +1,13 @@
 <h1 class="h1">Inventories</h1>
 
-<div class="relative overflow-x-auto shadow rounded-md">
-  <table class="w-full pb-4 text-sm text-left table-auto text-zinc-500">
-    <tbody>
-      <%= render @inventories %>
-    </tbody>
-  </table>
+<div class="flex justify-center">
+  <div class="relative overflow-x-auto shadow rounded-md">
+    <table class="pb-4 text-sm text-left table-auto text-zinc-500">
+      <tbody>
+        <%= render @inventories %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <%= render "shared/fab", url: new_inventory_path, model_name: "inventory" %>
