@@ -36,7 +36,6 @@
   </div>
 </div>
 
-
 <div class="relative mt-4 overflow-x-auto shadow rounded-md">
   <table class="w-full pb-4 text-sm text-left table-auto text-zinc-500">
     <thead class="text-xs uppercase text-zinc-700 bg-gray-50">
@@ -51,12 +50,5 @@
     </tbody>
   </table>
 </div>
-<div class="flex justify-end mt-2">
-  <%= button_to new_inventory_item_path, method: :get do %>
-    <div class="flex items-center justify-center px-4 py-4 text-white bg-black rounded-full flex-center align-center hover:black-100">
-      <span class="material-icons">add</span>
-    </div>
-  <% end %>
-</div>
 
-
+<%= render "shared/fab", url: new_inventory_item_path, model_name: "item" %>
