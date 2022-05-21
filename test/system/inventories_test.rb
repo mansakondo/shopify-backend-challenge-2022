@@ -6,7 +6,7 @@ class InventoriesTest < ApplicationSystemTestCase
 
     pause
 
-    click_button "add"
+    find_button("add").trigger("click")
 
     fill_in "Name", with: "Some inventory", id: "inventory_name"
 

@@ -10,7 +10,7 @@ class ItemsTest < ApplicationSystemTestCase
 
     pause
 
-    click_button "add"
+    find_button("add").trigger("click")
 
     pause
 
@@ -54,7 +54,7 @@ class ItemsTest < ApplicationSystemTestCase
 
     pause
 
-    click_button "add"
+    find_button("add").trigger("click")
 
     pause
 

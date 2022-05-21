@@ -12,7 +12,7 @@ class LocationsTest < ApplicationSystemTestCase
 
     pause
 
-    click_button "add"
+    find_button("add").trigger("click")
 
     fill_in "Name", with: "Some warehouse"
     fill_in "Address", with: Faker::Address.street_address
