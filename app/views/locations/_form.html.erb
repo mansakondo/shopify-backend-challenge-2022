@@ -1,24 +1,24 @@
-<%= form_with model: [@inventory, @location] do |location_form| %>
-  <div class="flex flex-col gap-6">
-    <div class="flex flex-col">
-      <%= location_form.label :name, class: "px-3 text-zinc-500 text-sm" %>
-      <%= location_form.text_field :name, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+<div class="mx-auto my-0 w-fit">
+  <%= form_with model: [@inventory, @location] do |location_form| %>
+    <div class="flex flex-col gap-6 w-80">
+      <div class="flex flex-col">
+        <%= location_form.label :name, class: "text-zinc-500 text-sm" %>
+        <%= location_form.text_field :name, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+      </div>
+      <div class="flex flex-col">
+        <%= location_form.label :address, class: "text-zinc-500 text-sm" %>
+        <%= location_form.text_field :address, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+      </div>
+      <div class="flex flex-col">
+        <%= location_form.label :city, class: "text-zinc-500 text-sm" %>
+        <%= location_form.text_field :city, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+      </div>
+      <div class="flex flex-col">
+        <%= location_form.label :country, class: "text-zinc-500 text-sm" %>
+        <%= location_form.text_field :country, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
+      </div>
     </div>
-    <div class="flex flex-col">
-      <%= location_form.label :address, class: "px-3 text-zinc-500 text-sm" %>
-      <%= location_form.text_field :address, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-    </div>
-    <div class="flex flex-col">
-      <%= location_form.label :city, class: "px-3 text-zinc-500 text-sm" %>
-      <%= location_form.text_field :city, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-    </div>
-    <div class="flex flex-col">
-      <%= location_form.label :country, class: "px-3 text-zinc-500 text-sm" %>
-      <%= location_form.text_field :country, class: "border-x-0 border-t-0 border-b focus:ring-0 focus:bg-zinc-100" %>
-    </div>
-  </div>
 
-  <%= location_form.submit nil, class: "btn mt-8" %>
-<% end %>
-
-
+    <%= location_form.submit nil, class: "btn mt-8" %>
+  <% end %>
+</div>
