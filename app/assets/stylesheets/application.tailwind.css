@@ -4,7 +4,7 @@
 
 @layer components {
   .h1 {
-    @apply mb-4 text-xl font-bold prose
+    @apply flex self-center mb-8 text-2xl text-center font-bold prose
   }
   .btn {
     @apply px-4 py-2 bg-black text-white rounded cursor-pointer
@@ -12,6 +12,7 @@
 }
 
 .link {
+  color: black;
 	&:hover {
 		text-decoration: underline;
 	}
