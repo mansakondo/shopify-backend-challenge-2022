@@ -2,7 +2,7 @@
 
 A simple inventory tracking application for the [Fall 2022 - Shopify Developer Intern Challenge](https://docs.google.com/document/d/1PoxpoaJymXmFB3iCMhGL6js-ibht7GO_DkCF2elCySU/edit).
 
-This application was hosted on [Replit](https://shopify-backend-challenge-2022.mansakondo.repl.co) and [Heroku](https://shopify-challenge-fall-2022.herokuapp.com/).
+This application is hosted on [Replit](https://replit.com/@mansakondo/shopify-backend-challenge-2022?v=1) and [Heroku](https://shopify-challenge-fall-2022.herokuapp.com/).
 
 ## Main features
 
